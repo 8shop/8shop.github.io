@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>聚优名品 | 甄选优品·特惠矩阵</title>
+    <title>聚优名品 | 甄选优品·特惠矩阵 | 官方客服微信</title>
     <style>
         * {
             margin: 0;
@@ -40,7 +40,7 @@
         .hero-card {
             position: relative;
             z-index: 2;
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(0px);
@@ -120,7 +120,7 @@
             transition: opacity 0.2s;
         }
 
-        /* 优雅标语区 (原装饰) */
+        /* 优雅标语区 */
         .tagline {
             text-align: center;
             margin-top: 1rem;
@@ -145,7 +145,7 @@
             font-weight: 450;
         }
 
-        /* ========= 新增网店区域 ========= */
+        /* ========= 网店区域 ========= */
         .shop-section {
             margin-top: 2rem;
             padding-top: 0.5rem;
@@ -181,7 +181,6 @@
             color: #c4451b;
         }
 
-        /* 三行网店列表 */
         .shop-list {
             display: flex;
             flex-direction: column;
@@ -209,7 +208,6 @@
             transform: translateY(-2px);
         }
 
-        /* 网店名称样式 */
         .shop-name {
             font-size: 1.2rem;
             font-weight: 700;
@@ -227,7 +225,6 @@
             filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
         }
 
-        /* 链接按钮风格 */
         .shop-link {
             display: inline-flex;
             align-items: center;
@@ -257,7 +254,6 @@
             transform: scale(0.98);
         }
 
-        /* 链接图标 */
         .shop-link::after {
             content: '🔗';
             font-size: 0.85rem;
@@ -268,33 +264,96 @@
             transform: translateX(3px);
         }
 
-        /* ========= 官方客服区域 ========= */
-        .customer-service {
-            margin-top: 2.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            text-align: center;
+        /* ========= 服务保障网格 ========= */
+        .advantage-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2.2rem 0 0.8rem;
+            position: relative;
         }
 
+        .adv-item {
+            background: linear-gradient(125deg, #fffaf2, #fff7ef);
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #b64926;
+            border: 1px solid rgba(230, 126, 34, 0.35);
+            box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(2px);
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            letter-spacing: 0.3px;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .adv-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,215,140,0.2), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            border-radius: 60px;
+        }
+
+        .adv-item:hover::before {
+            opacity: 1;
+        }
+
+        .adv-item:hover {
+            background: #e67e22;
+            color: white;
+            border-color: #e67e22;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 18px -10px rgba(230, 126, 34, 0.4);
+        }
+
+        .adv-item:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        /* ========= 客服区域（四个卡片：电话 + 微信客服 + 公众号 + 福利群）网格布局 ========= */
+        .customer-service {
+            margin-top: 1.8rem;
+            padding-top: 0.6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        /* 电话卡片专属样式（转为垂直布局，与其他卡片视觉统一） */
         .service-card {
             background: linear-gradient(115deg, #fffaf2 0%, #fff5e8 100%);
             border-radius: 2rem;
-            padding: 1.2rem 1.5rem;
-            display: inline-flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 1.2rem;
-            width: 100%;
+            padding: 1.2rem 1rem;
             border: 1px solid rgba(230, 126, 34, 0.3);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-            transition: all 0.2s;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.8rem;
         }
 
         .service-card:hover {
             border-color: #e67e22;
-            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.1);
-            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.12);
+            transform: translateY(-2px);
         }
 
         .service-label {
@@ -307,6 +366,7 @@
             background: rgba(230,126,34,0.12);
             padding: 0.3rem 1rem;
             border-radius: 40px;
+            letter-spacing: 0.3px;
         }
 
         .service-label::before {
@@ -353,7 +413,76 @@
             font-size: 0.9rem;
         }
 
-        /* ========= 官方网址展示区块（直接展示 https://8shop.github.io） ========= */
+        /* 二维码卡片通用样式（微信个人客服 + 公众号 + 福利群） */
+        .qr-card {
+            background: linear-gradient(115deg, #fffaf2 0%, #fff5e8 100%);
+            border-radius: 2rem;
+            padding: 1.2rem 1rem;
+            border: 1px solid rgba(230, 126, 34, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease;
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.65rem;
+        }
+
+        .qr-card:hover {
+            border-color: #e67e22;
+            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .qr-card .service-label {
+            background: rgba(230,126,34,0.12);
+            margin-bottom: 0.2rem;
+        }
+
+        /* 二维码图片统一样式 */
+        .qr-img {
+            width: 96px;
+            height: auto;
+            border-radius: 18px;
+            background: #ffffff;
+            padding: 4px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            display: block;
+            margin: 0.2rem auto;
+            border: 1px solid rgba(230, 126, 34, 0.25);
+            object-fit: contain;
+        }
+
+        .qr-card:hover .qr-img {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.2);
+            border-color: #e67e22;
+        }
+
+        .qr-card .service-note {
+            background: #fff2e6;
+            font-weight: 500;
+            color: #c4451b;
+            border-radius: 40px;
+            width: fit-content;
+            align-self: center;
+        }
+
+        /* 福利群额外时效提示 */
+        .expiry-tip {
+            font-size: 0.7rem;
+            background: rgba(0,0,0,0.04);
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            color: #b64926;
+            margin-top: 0.2rem;
+            display: inline-block;
+        }
+
+        /* ========= 官方网址区块 ========= */
         .official-url-section {
             margin-top: 1.8rem;
             padding-top: 1rem;
@@ -383,7 +512,6 @@
             transform: translateY(-1px);
         }
 
-        /* 标签样式：修改为“官方网址” */
         .url-label {
             font-size: 0.9rem;
             font-weight: 500;
@@ -431,9 +559,66 @@
             transform: scale(0.98);
         }
 
-        /* 官方直达文字已被删除，故移除 .copy-tip 相关样式（无此元素无需保留） */
+        /* ========= 底部法律区块 ========= */
+        .footer-legal {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            font-size: 0.75rem;
+            color: #6c7a89;
+            transition: all 0.2s ease;
+        }
 
-        /* 响应式: 手机上将名称和链接改为上下或左右自适应 */
+        .footer-legal p {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .footer-legal p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-legal a {
+            color: #c4451b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-legal a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: linear-gradient(90deg, #e67e22, #f39c12);
+            transition: width 0.25s ease-out;
+            border-radius: 2px;
+        }
+
+        .footer-legal a:hover {
+            color: #b33b12;
+        }
+
+        .footer-legal a:hover::after {
+            width: 100%;
+        }
+
+        .footer-legal .disclaimer {
+            font-size: 0.7rem;
+            opacity: 0.75;
+            background: rgba(230, 126, 34, 0.04);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式细节优化 */
         @media (max-width: 640px) {
             .hero-card {
                 padding: 2rem 1.2rem;
@@ -458,14 +643,11 @@
             .shop-link {
                 align-self: flex-start;
             }
-            .service-card {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.8rem;
-                padding: 1.2rem;
+            .customer-service {
+                gap: 1rem;
             }
-            .service-phone {
-                font-size: 1.3rem;
+            .qr-img {
+                width: 80px;
             }
             .official-url-section .url-card {
                 flex-direction: column;
@@ -474,9 +656,18 @@
                 width: 100%;
             }
             .url-display {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 word-break: break-all;
                 text-align: center;
+            }
+            .footer-legal {
+                margin-top: 2rem;
+                padding-top: 1rem;
+                font-size: 0.7rem;
+            }
+            .footer-legal .disclaimer {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.8rem;
             }
         }
 
@@ -497,8 +688,18 @@
             .service-phone {
                 font-size: 1.2rem;
             }
+            .qr-img {
+                width: 74px;
+            }
             .url-display {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
+            }
+            .advantage-grid {
+                gap: 0.7rem;
+            }
+            .adv-item {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
         }
 
@@ -518,7 +719,6 @@
             animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
         }
 
-        /* 辅助装饰 */
         .deco-star {
             animation: gentlePulse 2s infinite;
             display: inline-block;
@@ -534,40 +734,37 @@
 <body>
 
 <div class="hero-card">
-    <!-- 核心欢迎语：“欢迎光临聚优名品网站” 聚优名品放大突出 -->
+    <!-- 核心欢迎语：“欢迎光临聚优名品网站” -->
     <div class="welcome-container">
         <span class="greeting">欢迎光临</span>
         <span class="brand">聚优名品</span>
         <span class="site">网站</span>
     </div>
 
-    <!-- 轻量品质标语 -->
+    <!-- 品质标语 -->
     <div class="tagline">
         <span>✨ 甄选全球好物 · 尊享品质生活 ✨</span>
         <span class="deco-star">✦ 匠心优品 ✦</span>
     </div>
 
-    <!-- 三个网店区块 (分三行，链接可点击) -->
+    <!-- 三个网店区块 (官方直营店链接) -->
     <div class="shop-section">
         <div class="shop-heading">
             <span>📢 官方直营店 · 点击直达</span>
         </div>
         <div class="shop-list">
-            <!-- 网店1：聚优名品-折扣店 -->
             <div class="shop-item">
                 <div class="shop-name">聚优名品-折扣店</div>
                 <a href="https://k.youshop10.com/LgYz4i42" class="shop-link" target="_blank" rel="noopener noreferrer">
                     立即进店
                 </a>
             </div>
-            <!-- 网店2：聚优甄选(新店超低价) -->
             <div class="shop-item">
                 <div class="shop-name">聚优甄选(新店超低价)</div>
                 <a href="https://k.youshop10.com/eI9PlqBB" class="shop-link" target="_blank" rel="noopener noreferrer">
                     立即进店
                 </a>
             </div>
-            <!-- 网店3：聚优臻品-特价仓 -->
             <div class="shop-item">
                 <div class="shop-name">聚优臻品-特价仓</div>
                 <a href="https://k.youshop10.com/SLlORiHM" class="shop-link" target="_blank" rel="noopener noreferrer">
@@ -577,30 +774,82 @@
         </div>
     </div>
 
-    <!-- ========= 官方客服信息（微电同步） ========= -->
+    <!-- 服务保障承诺网格 -->
+    <div class="advantage-grid">
+        <div class="adv-item">✅ 正品保障</div>
+        <div class="adv-item">🚚 极速发货</div>
+        <div class="adv-item">🛡️ 7天无理由</div>
+        <div class="adv-item">💎 官方授权</div>
+    </div>
+
+    <!-- ========= 客服区域：电话 + 微信个人客服 + 公众号 + 福利群（四个卡片网格） ========= -->
     <div class="customer-service">
+        <!-- 官方客服电话卡片 -->
         <div class="service-card">
             <div class="service-label">官方客服</div>
             <a href="tel:15129624880" class="service-phone">151 2962 4880</a>
             <div class="service-note">微电同步 · 24h在线咨询</div>
         </div>
+
+        <!-- 微信个人客服二维码 -->
+        <div class="qr-card">
+            <div class="service-label" style="background:rgba(230,126,34,0.12);">📱 微信客服</div>
+            <img class="qr-img" 
+                 src="聚优名品微信二维码.jpg" 
+                 alt="聚优名品官方微信客服二维码｜扫一扫添加好友"
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%23fef3e8%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%23c4451b%22%20font-size%3D%2210%22%3E二维码%3C%2Ftext%3E%3C%2Fsvg%3E';">
+            <div class="service-note">扫码领新人礼包 · 一对一服务</div>
+        </div>
+
+        <!-- 官方公众号二维码 -->
+        <div class="qr-card">
+            <div class="service-label" style="background:rgba(230,126,34,0.12);">📰 官方公众号</div>
+            <img class="qr-img" 
+                 src="聚优名品公众号二维码.jpg" 
+                 alt="聚优名品公众号二维码｜关注获取折扣资讯"
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%23fef3e8%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%23c4451b%22%20font-size%3D%2210%22%3E公众号%3C%2Ftext%3E%3C%2Fsvg%3E';">
+            <div class="service-note">扫码关注 获取新品/优惠推送</div>
+        </div>
+
+        <!-- 福利群二维码（限量/限时群） -->
+        <div class="qr-card">
+            <div class="service-label" style="background:rgba(230,126,34,0.12);">🎁 福利群 · 红包雨</div>
+            <img class="qr-img" 
+                 src="聚优名品福利群二维码.jpg" 
+                 alt="聚优名品福利群二维码｜扫码加入抢红包"
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%23fef3e8%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%23c4451b%22%20font-size%3D%2210%22%3E福利群%3C%2Ftext%3E%3C%2Fsvg%3E';">
+            <div class="service-note">扫码进群 享限时红包/特价</div>
+            <span class="expiry-tip">⏰ 7天有效，尽快加入</span>
+        </div>
     </div>
 
-    <!-- ========= 官方网址区块：标签修改为“官方网址”，已删除“官方直达”文字 ========= -->
+    <!-- 官方网址区块 -->
     <div class="official-url-section">
         <div class="url-card">
-            <!-- 原“品牌信息门户”改为“官方网址” -->
             <span class="url-label">官方网址</span>
-            <!-- 直接展示完整网址 https://8shop.github.io ，可点击跳转 -->
             <a href="https://8shop.github.io" target="_blank" rel="noopener noreferrer" class="url-display" title="点击访问 8shop.github.io">
                 https://8shop.github.io
             </a>
-            <!-- 已删除官方直达文字元素（原 copy-tip 已移除，符合要求） -->
         </div>
-        <!-- 辅助说明：仅展示官方网址核心内容，满足“官方直达文字删除” -->
+    </div>
+
+    <!-- 底部法律声明区块 -->
+    <div class="footer-legal">
+        <p>© 2026 聚优名品 版权所有 | <a href="javascript:void(0)" rel="nofollow">隐私政策</a> | <a href="javascript:void(0)" rel="nofollow">用户协议</a></p>
+        <p class="disclaimer">本平台仅提供信息展示，商品交易跳转至第三方店铺 | 客服及福利群由官方统一运营</p>
     </div>
 </div>
 
-<!-- 修改说明：品牌信息门户 → 官方网址；并彻底移除包含“官方直达”的span元素。网址区块清晰呈现官方地址，用户可一键直达。 -->
+<!-- 
+    更新说明：
+    1. 新增“公众号二维码”及“福利群二维码”两个卡片，与原“微信个人客服”形成完整社群矩阵。
+    2. 采用 Grid 响应式布局（自动适配2x2 / 1x4），所有卡片悬停动效统一，视觉更精致。
+    3. 福利群二维码下方增加时效提醒“7天有效，尽快加入”，提升转化紧迫感。
+    4. 图片加载失败时自动替换为纯色占位符，不影响整体美观。
+    5. 保留原有网店、官方电话、保障承诺、官网及法律声明，功能完整。
+-->
 </body>
 </html>
